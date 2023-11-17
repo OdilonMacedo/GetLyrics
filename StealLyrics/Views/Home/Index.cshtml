@@ -1,0 +1,18 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="form-group" id="form-insira-musica">
+    <label class="form-label">Insira o nome da música:</label>
+    <input class="form-control" type="text" id="nomeMsc" />
+    <button class="btn btn-primary mt-3" onclick="ProcurarMusica()">Procurar</button>
+</div>
+
+<div id="letramusica"></div>
+
+@section Scripts{
+    <script src="~/js/MainScript.js"></script>
+}

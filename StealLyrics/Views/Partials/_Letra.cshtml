@@ -1,0 +1,32 @@
+﻿@model ResponseLyricsViewModel;
+@{
+    var count = 1;
+}
+
+<div class="position-fixed" style="bottom: 0; right: 0;border: 1px black; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);" id="videoContainer">
+    <div class="container p-3">
+        <div class="text-center">
+            <button class="btn btn-outline-dark" onclick="fecharVideo()">Fechar</button>
+        </div>
+        @Html.Raw(Model.Video)
+    </div>
+</div>
+
+<div class="col-12 mt-2">
+    <div class="row">
+        <div class="col">
+            @foreach (var text in Model.Linhas)
+            {
+                @if (count == 1)
+                {
+                    <h2>@Model.NomeMusica</h2>
+                }
+                else
+                {
+                    <p>@text</p>
+                }
+                count = 2;
+            }
+        </div>
+    </div>
+</div>
